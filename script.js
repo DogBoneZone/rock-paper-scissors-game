@@ -28,12 +28,23 @@ let playGame = (playerSelection, computerSelection) => {
 
     if (playerOption === computerSelection) {
         console.log("Draw!");
+        return 0
     } else if (playerOption === "bomb") {
-        computerSelection === "cockroach" ? console.log("You Lose! || Player: %s Computer: %s", playerOption, computerSelection) : 
-        console.log("You Win! || Player: %s Computer: %s", playerOption, computerSelection);
+        if (computerSelection === "cockroach") {
+            console.log("You Lose! || Player: %s Computer: %s", playerOption, computerSelection);
+            return 0
+        } else {
+            console.log("You Win! || Player: %s Computer: %s", playerOption, computerSelection);
+            return 1
+        }
     } else if (playerOption === "cockroach") {
-        computerSelection === "bomb" ? console.log("You Win! || Player: %s Computer: %s", playerOption, computerSelection) : 
-        console.log("You Lose! || Player: %s Computer: %s", playerOption, computerSelection);
+        if (computerSelection === "bomb") {
+            console.log("You Win! || Player: %s Computer: %s", playerOption, computerSelection);
+            return 1
+        } else {
+            console.log("You Lose! || Player: %s Computer: %s", playerOption, computerSelection);
+            return 0
+        }
     } else if (playerOption === "foot") {
         computerSelection === "bomb" ? console.log("You Lose!|| Player: %s Computer: %s", playerOption, computerSelection) : 
         console.log("You Win! || Player: %s Computer: %s", playerOption, computerSelection);
