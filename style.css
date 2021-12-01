@@ -1,0 +1,30 @@
+html {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body {
+    padding: 0 10%;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+#selections {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 0;
+}
+#selections img {
+    height: 300px;
+    transition-duration: 1s;
+    -webkit-transition: all 1s ease;
+    border: groove;
+}
+#selections img:hover {
+    transform: scale(1.2);
+}
+#scoreboard {
+    display: flex;
+    justify-content: space-around;
+}

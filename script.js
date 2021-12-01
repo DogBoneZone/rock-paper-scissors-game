@@ -15,16 +15,13 @@ let computerPlay = () => {
     return options[arrayValue];
 }
 
-// This is the prompt for the player to select their weapon
-let playerChoice = prompt("Select either Bomb, Cockroach, or Foot");
+// This is a global variable for the score of the game
+let playerScore = 0;
+let computerScore = 0;
 
 // This is the function that players a single round
 let playGame = (playerSelection, computerSelection) => {
     let playerOption = playerSelection.toLowerCase();
-
-    if (playerSelection ==! "bomb"||playerSelection ==! "cockroach"||playerSelection ==! "foot") {
-        Notification("Please select either Bomb, Cockroach, or Foot");
-    }
 
     if (playerOption === computerSelection) {
         console.log("Draw!");
@@ -32,7 +29,7 @@ let playGame = (playerSelection, computerSelection) => {
     } else if (playerOption === "bomb") {
         if (computerSelection === "cockroach") {
             console.log("You Lose! || Player: %s Computer: %s", playerOption, computerSelection);
-            return 0
+            return -1
         } else {
             console.log("You Win! || Player: %s Computer: %s", playerOption, computerSelection);
             return 1
@@ -43,14 +40,21 @@ let playGame = (playerSelection, computerSelection) => {
             return 1
         } else {
             console.log("You Lose! || Player: %s Computer: %s", playerOption, computerSelection);
-            return 0
+            return -1
         }
     } else if (playerOption === "foot") {
-        computerSelection === "bomb" ? console.log("You Lose!|| Player: %s Computer: %s", playerOption, computerSelection) : 
-        console.log("You Win! || Player: %s Computer: %s", playerOption, computerSelection);
+        if (computerSelection === "bomb") {
+            console.log("You Win! || Player: %s Computer: %s", playerOption, computerSelection);
+            return 1
+        } else {
+            console.log("You Lose! || Player: %s Computer: %s", playerOption, computerSelection);
+            return -1
+        }
     }
 }
 
-for (let i=0; i<=5; i++) {
-    playGame(playerChoice, computerPlay());
-}
+// Listeners
+const dog = document.querySelector("#bomb");
+dog.addEventListener("click", () => {
+    playGame("rock");
+});
