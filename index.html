@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BCF Battle</title>
-    <script src="script.js"></script>
+    <title>CFNB Battle</title>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css"></link>
 </head>
 <body>
@@ -14,21 +14,47 @@
             <img src="images/bombroachfootTitle.webp" alt="titleImage">
         </div>
         <div>
-            <h3>Select Your Weapon</h3>
+            <h3>CFNB: A Game for Lords & Ladies</h3>
+            <label>
+                A simple game for sophisticated folks, unlike that barbaric game "Rock, Paper, Scissors" (ew). For the uninitiated, 
+                the rules are explained below. Simply click on your desired choice and see if you can defeat a computer that mindlessly 
+                chooses a random option with no higher level strategy.
+                <ul>
+                    <li>A nuclear bomb obliterates a fleshy foot.</li>
+                    <li>A cockroach easily survives the radioactive fallout of a nuclear bomb.</li>
+                    <li>A foot squishes the life out of a meager cockroach any day of the week.</li>
+                </ul>
+            </label>
         </div>
         <div id="selections">
-            <img id="bomb" src="images/bomb.webp" alt="bomb">
-            <img id="cockroach" src="images/cockroach.webp" alt="cockroach">
-            <img id="foot" src="images/foot.webp" alt="foot">
+            <div>
+                <img id="bomb" src="images/bomb.png" alt="bomb">
+                <div id="bombStats"></div>
+            </div>
+            <div>
+                <img id="cockroach" src="images/cockroach.png" alt="cockroach">
+                <div id="cockroachStats"></div>
+            </div>
+            <div>
+                <img id="foot" src="images/foot.png" alt="foot">
+                <div id="footStats"></div>
+            </div>
         </div>
         <div id="scoreboard">
-            <h3>
-                You
-            </h3>
-            <h3>
-                Computer
-            </h3>
+            <div id="playerScore">
+                <h2>You</h2>
+                <div></div>
+            </div>
+            <div id="roundCounter">
+                <h2>Round</h2>
+                <div></div>
+            </div>
+            <div id="computerScore">
+                <h2>Computer</h2>
+                <div></div>
+            </div>
         </div>
+        <div id="result"></div>
     </div>
 </body>
 </html>

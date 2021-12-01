@@ -1,28 +1,50 @@
 html {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 body {
-    padding: 0 10%;
+    padding: 0 15%;
+}
+#title {
+    display: flex;
+    justify-content: center;
 }
 #container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
+    text-align: left;
+    justify-content: space-around;
+    background-color: rgba(202, 202, 202, 0.582);
+    padding: 0 10%;
 }
 #selections {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin: 50px 0;
 }
 #selections img {
-    height: 300px;
+    height: 100px;
     transition-duration: 1s;
     -webkit-transition: all 1s ease;
+    transition: all 1s ease;
     border: groove;
 }
 #selections img:hover {
-    transform: scale(1.2);
+    border: inset;
+    background: rgba(0, 0, 0, 0.644);
+}
+#playerScore, #roundCounter, #computerScore {
+    flex: 0 1 auto;
+    text-align: center;
+}
+#cockroachStats, #bombStats, #footStats {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+#result {
+    text-align: center;
+    padding: 100px 0;
 }
 #scoreboard {
     display: flex;
