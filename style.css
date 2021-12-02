@@ -1,10 +1,22 @@
+@font-face {
+    font-family: "Cinzel";
+    src: url('./fonts/Cinzel\ Family/Cinzel-Regular.ttf');
+    src: local('')
+}
+@font-face {
+    font-family: "Constantine";
+    src: url("./fonts/constantine/CONSTANTINE/Constantine.ttf");
+}
+
 html {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: "Constantine";
     background: rgba(0, 0, 0, 0.692);
     color: white;
 }
 body {
     padding: 0 20%;
+    background: url("./images/column.png") no-repeat fixed;
+    background-position: top;
 }
 ul {
     text-align: left;
@@ -13,6 +25,7 @@ ul {
 #title {
     display: flex;
     justify-content: center;
+    font-size: x-large;
 }
 #rules {
     text-align: center;
