@@ -73,7 +73,7 @@ let playGame = (playerSelection, computerSelection) => {
 
     if (playerSelection === computerSelection) {
         console.log("Draw!");
-        resultValue.textContent = "DRAW!";
+        resultValue.textContent = "DRAW!!";
         winner = "None";
     } else if (playerSelection === "whip") {
         if (computerSelection === "sword") {

@@ -21,6 +21,7 @@
             <div id="rules">
                 <h3>Rules of the Game</h3>
                 <div>
+                    <!--
                     <label>
                         <p>
                             You are Maximus Decimus Meridius, Commander of the Armies of the North, General of the 
@@ -33,50 +34,47 @@
                             with a major wound already. You will also suffer the pain of death after receiving 5 wounds...
                         </p>
                     </label>
+                    -->
                 </div>
                 <div>
-                    <ul>
-                        <li>A <span style="color: darkred">Sword</span> can cut through a <span style="color: darkblue">Whip</span> and damage your opponent.</li>
-                        <li>A <span style="color: darkgreen">Shield</span> can easily block a <span style="color: darkred">Sword</span> and follow-up with a bash attack.</li>
-                        <li>A <span style="color: darkblue">Whip</span> can wrap around a <span style="color: darkgreen">Shield</span> and disarm your opponent.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div id="container2">
-            <div id="selections">
-                <div id="sword">
-                    <img src="images/sword.png" alt="sword img">
-                </div>
-                <div id="shield">
-                    <img src="images/shield.png" alt="shield img">
-                </div>
-                <div id="whip">
-                    <img src="images/whip.png" alt="whip img">
-                </div>
-            </div>
-            <div id="statBlock">
-                <div id="playerScore" class="item">
-                    <h2>Maximus</h2>
-                    <div class="score">5 HP</div>
-                </div>
-                <div id="roundCounter" class="item">
-                    <h2>Round</h2>
-                    <div class="score">0</div>
-                </div>
-                <div id="computerScore" class="item">
-                    <h2>Commodus</h2>
-                    <div class="score">5 HP</div>
+                    <label>
+                        <p>A <span style="color: darkred">Sword</span> can cut through a <span style="color: darkblue">Whip</span></p>
+                        <p>A <span style="color: darkgreen">Shield</span> can easily block a <span style="color: darkred">Sword</span></p>
+                        <p>A <span style="color: darkblue">Whip</span> can wrap around a <span style="color: darkgreen">Shield</span></p>
+                    </label>
                 </div>
             </div>
         </div>
         <div id="container3">
             <div>
-                <img src="images/maximus.jpeg" alt="Maximus img">
+                <img id="maximus" src="images/maximus.jpeg" alt="Maximus img">
+                <div id="playerScore" class="item">
+                    <div class="score">5 HP</div>
+                </div>
             </div>
-            <div id="result">"Let the battle begin."</div>
+            <div id="selections">
+                <div>
+                    <img id="sword" src="images/sword.png" alt="sword img">
+                </div>
+                <div>
+                    <img id="shield" src="images/shield.png" alt="shield img">
+                </div>
+                <div>
+                    <img id="whip" src="images/whip.png" alt="whip img">
+                </div>
+            </div>
             <div>
-                <img src="images/joaquinPhoenix.jpeg" alt="Joaquin Phonix img">
+                <img id="commodus" src="images/joaquinPhoenix.jpeg" alt="Joaquin Phonix img">
+                <div id="computerScore" class="item">
+                    <div class="score">5 HP</div>
+                </div>
+            </div>
+        </div>
+        <div id="roundInfo">
+            <div id="roundCounter" class="item">
+                <h2>Round</h2>
+                <div class="score">0</div>
+                <div id="result">"Let the battle begin."</div>
             </div>
         </div>
     </div>

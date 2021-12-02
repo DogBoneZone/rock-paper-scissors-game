@@ -16,7 +16,8 @@ body {
     background: rgba(0, 0, 0, 0.692) url("./images/column.png") no-repeat fixed;
     background-position: top;
     color: white;
-    padding: 0 20%;
+    padding: 0 10%;
+    min-width: 400px;
 }
 ul {
     text-align: left;
@@ -26,6 +27,7 @@ ul {
     display: flex;
     justify-content: center;
     font-size: x-large;
+    text-align: center;
 }
 #rules {
     text-align: center;
@@ -39,7 +41,7 @@ ul {
     text-align: left;
     justify-content: space-around;
     background-color: rgba(202, 202, 202, 0.582);
-    padding: 0 10%;
+    padding: 0 20%;
 }
 #container2 {
     display: flex;
@@ -49,29 +51,42 @@ ul {
 }
 #container3 {
     display: flex;
-    justify-content: space-between;
+    justify-content: safe;
+    flex-wrap: wrap;
     background:rgba(0, 0, 0, 0.644);
     text-align: center;
     align-items: center;
+    min-height: 250px;
+}
+#container3 img {
+    height: 150px;
+    flex: 0 0 33.33%;
+}
+#container3 div {
+    flex: 0 0 33.333333%;
+}
+#roundInfo {
+    display: flex;
+    flex-direction: column;
 }
 #selections {
     display: flex;
-    justify-content: space-around;
-    align-items: baseline;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     margin: 50px 0;
 }
 .item {
     flex: 0 0 33.3333%;
     text-align: center;
-    margin: 20px 0;
 }
 .score {
     color: darkred;
     font-size: x-large;
 }
 #selections img {
-    height: 150px;
+    height: 50px;
     transition-duration: 1s;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
@@ -83,11 +98,6 @@ ul {
     background: rgba(0, 0, 0, 0.644);
     border: groove;
     transform: scale(1.2);
-}
-#statBlock {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 #endGamePage {
     display: flex;
