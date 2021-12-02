@@ -7,54 +7,76 @@
     <title>CFNB Battle</title>
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css"></link>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 </head>
 <body>
     <div id="container">
         <div id="title">
-            <img src="images/bombroachfootTitle.webp" alt="titleImage">
+            <h1>
+                Maximus vs Commodus: Battle for Supremacy
+            </h1>
         </div>
-        <div>
-            <h3>CFNB: A Game for Lords & Ladies</h3>
-            <label>
-                A simple game for sophisticated folks, unlike that barbaric game "Rock, Paper, Scissors" (ew). For the uninitiated, 
-                the rules are explained below. Simply click on your desired choice and see if you can defeat a computer that mindlessly 
-                chooses a random option with no higher level strategy.
+        <div id="rules">
+            <h3>Rules of the Game</h3>
+            <div>
+                <label>
+                    <p>
+                        You are Maximus Decimus Meridius, Commander of the Armies of the North, General of the 
+                        Felix Legions, Loyal Servant to the true Emperor, Marcus Aurelius, Father to a murdered son, 
+                        Husband to a murdered wife, and you will have your vengeance, in this life or the next.
+                    </p>
+                    <p>
+                        You must wound your opponent 5 times in order to take your vengeance. However, despite your 
+                        overwhelming combat experience in comparison to Commodus, you are going into this battle 
+                        with a major wound already. You will also suffer the pain of death after receiving 5 wounds...
+                    </p>
+                </label>
+            </div>
+            <div>
                 <ul>
-                    <li>A nuclear bomb obliterates a fleshy foot.</li>
-                    <li>A cockroach easily survives the radioactive fallout of a nuclear bomb.</li>
-                    <li>A foot squishes the life out of a meager cockroach any day of the week.</li>
+                    <li>A <span style="color: darkred">Sword</span> can cut through a <span style="color: darkblue">Whip</span> and damage your opponent.</li>
+                    <li>A <span style="color: darkgreen">Shield</span> can easily block a <span style="color: darkred">Sword</span> and follow-up with a bash attack.</li>
+                    <li>A <span style="color: darkblue">Whip</span> can wrap around a <span style="color: darkgreen">Shield</span> and disarm your opponent.</li>
                 </ul>
-            </label>
+            </div>
         </div>
+    </div>
+    <div id="container2">
         <div id="selections">
-            <div>
-                <img id="bomb" src="images/bomb.png" alt="bomb">
-                <div id="bombStats"></div>
+            <div id="sword">
+                <img src="images/sword.png" alt="sword img">
             </div>
-            <div>
-                <img id="cockroach" src="images/cockroach.png" alt="cockroach">
-                <div id="cockroachStats"></div>
+            <div id="shield">
+                <img src="images/shield.png" alt="shield img">
             </div>
-            <div>
-                <img id="foot" src="images/foot.png" alt="foot">
-                <div id="footStats"></div>
+            <div id="whip">
+                <img src="images/whip.png" alt="whip img">
             </div>
         </div>
-        <div id="scoreboard">
-            <div id="playerScore">
-                <h2>You</h2>
-                <div></div>
+        <div id="statBlock">
+            <div id="playerScore" class="item">
+                <h2>Maximus</h2>
+                <div class="score">5 HP</div>
             </div>
-            <div id="roundCounter">
+            <div id="roundCounter" class="item">
                 <h2>Round</h2>
-                <div></div>
+                <div class="score">0</div>
             </div>
-            <div id="computerScore">
-                <h2>Computer</h2>
-                <div></div>
+            <div id="computerScore" class="item">
+                <h2>Commodus</h2>
+                <div class="score">5 HP</div>
             </div>
         </div>
-        <div id="result"></div>
+    </div>
+    <div id="container3">
+        <div>
+            <img src="images/maximus.jpeg" alt="Maximus img" height="250">
+        </div>
+        <div id="result">"Let the battle begin."</div>
+        <div>
+            <img src="images/joaquinPhoenix.webp" alt="Joaquin Phonix img" height="250">
+        </div>
     </div>
 </body>
 </html>

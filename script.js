@@ -1,26 +1,55 @@
-// Listeners
-const bomb = document.querySelector("#bomb");
-const foot = document.querySelector("#foot");
-const cockroach = document.querySelector("#cockroach");
+// These are global variables
+let playerScore = 5;
+let computerScore = 5;
+let roundCounter = 0;
+const pScoreValue = document.querySelector("#playerScore");
+const cScoreValue = document.querySelector("#computerScore");
+const roundValue = document.querySelector("#roundCounter");
+const resultValue = document.querySelector("#result");
+const container = document.querySelector("#container");
 
-bomb.addEventListener("click", () => {
-    playGame("bomb", computerPlay());
-    statsCalc();
-});
+// End Game Page
+const pageContent = document.querySelector("body");
+let endGamePage;
+let gameEnd = false;
 
-foot.addEventListener("click", () => {
-    playGame("foot", computerPlay());
-    statsCalc();
-});
+// Scores and Taunt Arrays
+let swordScore = 0;
+let whipScore = 0;
+let shieldScore = 0;
 
-cockroach.addEventListener("click", () => {
-    playGame("cockroach", computerPlay());
-    statsCalc();
-});
+const winnerValues =  [
+    'Commodus: "You have struck me..."',
+    'Maximus: "You bleed this day."',
+    'Commodus: "Do not harm me again, slave. I need to have sex with my sister afterwards."',
+    'Maximus: "I have wounded you. How will you have sex with your sister now?"',
+    'Commodus: "Ahhh! I am wounded! Having sex with my sister will have to wait until I am done with you."',
+    'Maximus: "When you are dead, I will spit on your corpse and let your sister know she can no longer have sex with you."',
+    'Commodus: "Ouch! I am exhausted and slow from recently having sex with my sister."',
+    'Maximus: "Let my blade sink deeper into you, as you similarly do to your sister."',
+    'Commodus: "The gods have abandoned me on this day! I must have sex with my sister!"',
+    'Maximus: "I nearly took your head just then. Perhaps you need to have sex with your sister less."',
+    'Commodus: "This wound will not stop me from having sex with my sister!"',
+    'Maximus: "May the wounds I inflict upon you persist as long as the sex with your sister."'
+];
+const loserValues = [
+    'Commodus: "HA! I have struck you! This calls for some sex with my sister."',
+    'Maximus: "Ahh, you have struck me... you must be energized from having sex with your sister."',
+    'Commodus: "After I kill you, I need to go have sex with my sister."',
+    'Maximus: "These wounds inhibit my combat prowess... do your wounds inhibit the sex with your sister?"',
+    'Commodus: "The sight of your blood drives me into a frenzy, much like when I have sex with my sister."',
+    'Maximus: "The pain you have caused me is worsened every time you have sex with your sister."',
+    'Commodus: "I revel in your pain, almost as much as I revel in ecstasy when I have sex with my sister."',
+    'Maximus: "I shall let this pain drive my fury. You shall regret having sex with your sister on this day."',
+    'Commodus: "I will have sex with my sister immediately after I kill you."',
+    'Maximus: "If I die today, know that I shall join my family. Speaking of family, dont you have sex with your sister?"',
+    'Commodus: "The crowd watches you bleed today, Maximus. And afterwards, they will watch me have sex with my sister."',
+    'Maximus: "Sex. With. My. Sister."'
+];
 
 // This is the function for the computer's output
 let computerPlay = () => {
-    let options = ["bomb", "cockroach", "foot"];
+    let options = ["whip", "sword", "shield"];
     let arrayValue = 0;
     let randomNumber = Math.random();
 
@@ -35,52 +64,6 @@ let computerPlay = () => {
     return options[arrayValue];
 }
 
-// These are global variables
-let playerScore = 0;
-let computerScore = 0;
-let roundCounter = 0;
-const pScoreValue = document.querySelector("#playerScore");
-const cScoreValue = document.querySelector("#computerScore");
-const roundValue = document.querySelector("#roundCounter");
-const resultValue = document.querySelector("#result");
-
-let cockroachScore = 0;
-let bombScore = 0;
-let footScore = 0;
-
-let cockroachPop = 0;
-let footPop = 0;
-let bombPop = 0;
-
-const winnerValues =  [
-    "Winner... yay...",
-    "You're not as stupid as you look.",
-    "So you beat a computer, whatever.",
-    "Are you tired of clicking yet?",
-    "How exciting... you won.",
-    "Your mother was a sewer rat.",
-    "One night in Bangkok makes a hard man crumble.",
-    "Journey was an OK band.",
-    "Name as many 'That 70's Show' characters as you can.",
-    "Your father sucks eggs at night.",
-    "We all wear masks, metaphorically speaking.",
-    "Yeah, yeah don't let it get to your head."
-];
-const loserValues = [
-    "Hahahahahahaha!",
-    "How embarassing...",
-    "Wow, you really suck.",
-    "The guy who made this can barely code and you're still losing haha",
-    "Tell me you suck without telling me you suck",
-    "You're actually trying, right?",
-    "Don't quit your day job.",
-    "If you listen real hard at night, you can hear the wind say you suck.",
-    "You're probably the worst person to play this game.",
-    "I'll give you another shot since you seem to have a disability.",
-    "Did you hit your head recently or something?",
-    "Just stop man... go home."
-];
-
 // This is the function that players a single round
 let playGame = (playerSelection, computerSelection) => {
     roundCounter++;
@@ -92,78 +75,115 @@ let playGame = (playerSelection, computerSelection) => {
         console.log("Draw!");
         resultValue.textContent = "DRAW!";
         winner = "None";
-    } else if (playerSelection === "bomb") {
-        if (computerSelection === "cockroach") {
+    } else if (playerSelection === "whip") {
+        if (computerSelection === "sword") {
             console.log("You Lose! || Player: %s Computer: %s", playerSelection, computerSelection);
             resultValue.textContent = `${loserValues[index]}`;
-            computerScore++;
+            playerScore--;
             winner = computerSelection;
         } else {
             console.log("You Win! || Player: %s Computer: %s", playerSelection, computerSelection);
             resultValue.textContent = `${winnerValues[index]}`;
-            playerScore++;
-            winner = playerSelection;
-        }
-    } else if (playerSelection === "cockroach") {
-        if (computerSelection === "bomb") {
-            console.log("You Win! || Player: %s Computer: %s", playerSelection, computerSelection);
-            resultValue.textContent = `${winnerValues[index]}`;
-            playerScore++;
-            winner = playerSelection;
-        } else {
-            console.log("You Lose! || Player: %s Computer: %s", playerSelection, computerSelection);
-            resultValue.textContent = `${loserValues[index]}`;
-            computerScore++;
+            computerScore--;
             winner = computerSelection;
         }
-    } else if (playerSelection === "foot") {
-        if (computerSelection === "cockroach") {
+    } else if (playerSelection === "shield") {
+        if (computerSelection === "sword") {
             console.log("You Win! || Player: %s Computer: %s", playerSelection, computerSelection);
             resultValue.textContent = `${winnerValues[index]}`;
-            playerScore++;
+            computerScore--;
             winner = playerSelection;
         } else {
             console.log("You Lose! || Player: %s Computer: %s", playerSelection, computerSelection);
             resultValue.textContent = `${loserValues[index]}`;
-            computerScore++;
+            playerScore--;
             winner = computerSelection;
+        }
+    } else if (playerSelection === "sword") {
+        if (computerSelection === "whip") {
+            console.log("You Win! || Player %s Computer: %s", playerSelection, computerSelection);
+            resultValue.textContent = `${winnerValues[index]}`;
+            computerScore--;
+            winner = playerSelection;
         }
     }
 
-    pScoreValue.querySelector("div").textContent = playerScore;
-    cScoreValue.querySelector("div").textContent = computerScore;
+    pScoreValue.querySelector("div").textContent = `${playerScore} HP`;
+    cScoreValue.querySelector("div").textContent = `${computerScore} HP`;
 
+    // Assign Score Function
     if (winner !== "None") {
         let construct = (`${winner}` + "Score");
         assignScore(construct)
-        console.log(cockroachScore);
-        console.log(bombScore);
-        console.log(footScore);
     };
+
+    // Check for End of Game
+    if (playerScore <= 0) {
+        gameEnd = true;
+        endGamePage = `<div id="endGamePage">
+                            <div>
+                                <img src="images/joaquinPhoenix.webp" alt="joaquinPhoenix img">
+                            </div>
+                            <div>
+                                "In what world could you have ever defeated me? Such a place does not exist."
+                            </div>
+                            <div id="reset">
+                                <button>Fight Again</button>
+                            </div>
+                        </div>`
+        pageContent.innerHTML = endGamePage;
+        const reset = document.querySelector("#reset");
+        reset.addEventListener("click", () => {
+            location.reload();
+        });
+        
+    } else if (computerScore <= 0) {
+        gameEnd = true;
+        endGamePage = `<div id="endGamePage">
+                            <div>
+                                <img src="images/maximus.jpeg" alt="maximus img">
+                            </div>
+                            <div>
+                                You have won... but you will succumb to your wounds soon... your family awaits.
+                            </div>
+                            <div id="reset">
+                                <button>Fight Again</button>
+                            </div>
+                        </div>`
+        pageContent.innerHTML = endGamePage;
+
+        const reset = document.querySelector("#reset");
+        reset.addEventListener("click", () => {
+            location.reload();
+        }); 
+    }
 }
 
 
 const assignScore = (string) => {
-    if (string === "bombScore") {
-        bombScore++;
-    } else if (string === "cockroachScore") {
-        cockroachScore++;
-    } else if (string === "footScore") {
-        footScore++;
+    if (string === "whipScore") {
+        whipScore++;
+    } else if (string === "swordScore") {
+        swordScore++;
+    } else if (string === "shieldScore") {
+        shieldScore++;
     }
 }
 
-// Calculate Stats
-const statsCalc = () => {
-    const cockroachStats = document.querySelector("#cockroachStats");
-    const bombStats = document.querySelector("#bombStats");
-    const footStats = document.querySelector("#footStats");
+// Listeners
+const whip = document.querySelector("#whip");
+const shield = document.querySelector("#shield");
+const sword = document.querySelector("#sword");
 
-    // Win Rate
-    let cockroachWinRate = ((cockroachScore/roundCounter) * 100).toFixed(2) + "%";
-    let bombWinRate = ((bombScore/roundCounter) * 100).toFixed(2) + "%";
-    let footWinRate = ((footScore/roundCounter) * 100).toFixed(2) + "%";
 
-    //
-    
-}
+whip.addEventListener("click", () => {
+    playGame("whip", computerPlay());
+});
+
+shield.addEventListener("click", () => {
+    playGame("shield", computerPlay());
+});
+
+sword.addEventListener("click", () => {
+    playGame("sword", computerPlay());
+});

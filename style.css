@@ -1,12 +1,24 @@
 html {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: rgba(0, 0, 0, 0.692);
+    color: white;
 }
 body {
-    padding: 0 15%;
+    padding: 0 20%;
+}
+ul {
+    text-align: left;
+    list-style: inside;
 }
 #title {
     display: flex;
     justify-content: center;
+}
+#rules {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 #container {
     display: flex;
@@ -16,37 +28,63 @@ body {
     background-color: rgba(202, 202, 202, 0.582);
     padding: 0 10%;
 }
+#container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(202, 202, 202, 0.582);
+}
+#container3 {
+    display: flex;
+    justify-content: space-between;
+    background:rgba(0, 0, 0, 0.644);
+    text-align: center;
+    align-items: center;
+}
 #selections {
     display: flex;
     justify-content: space-around;
+    align-items: baseline;
     flex-wrap: wrap;
     margin: 50px 0;
 }
+.item {
+    flex: 0 0 33.3333%;
+    text-align: center;
+    margin: 20px 0;
+}
+.score {
+    color: darkred;
+    font-size: x-large;
+}
 #selections img {
-    height: 100px;
+    height: 150px;
     transition-duration: 1s;
     -webkit-transition: all 1s ease;
     transition: all 1s ease;
-    border: groove;
+    border-radius: 20px;
+    cursor: pointer;
+    border: outset transparent;
 }
 #selections img:hover {
-    border: inset;
     background: rgba(0, 0, 0, 0.644);
+    border: groove;
+    transform: scale(1.2);
 }
-#playerScore, #roundCounter, #computerScore {
-    flex: 0 1 auto;
-    text-align: center;
-}
-#cockroachStats, #bombStats, #footStats {
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-}
-#result {
-    text-align: center;
-    padding: 100px 0;
-}
-#scoreboard {
+#statBlock {
     display: flex;
     justify-content: space-around;
+    align-items: center;
+}
+#joaquin {
+    display: flex;
+    text-align: right;
+    align-items: right;
+}
+#endGamePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 20% 0;
 }
