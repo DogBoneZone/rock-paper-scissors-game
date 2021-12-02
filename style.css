@@ -89,11 +89,6 @@ ul {
     justify-content: space-around;
     align-items: center;
 }
-#joaquin {
-    display: flex;
-    text-align: right;
-    align-items: right;
-}
 #endGamePage {
     display: flex;
     flex-direction: column;
