@@ -7,6 +7,8 @@ const cScoreValue = document.querySelector("#computerScore");
 const roundValue = document.querySelector("#roundCounter");
 const resultValue = document.querySelector("#result");
 const container = document.querySelector("#container");
+let music = new Audio("sounds/The_Colosseum.ogg");
+music.play();
 
 // End Game Page
 const pageContent = document.querySelector("body");
@@ -122,7 +124,7 @@ let playGame = (playerSelection, computerSelection) => {
         gameEnd = true;
         endGamePage = `<div id="endGamePage">
                             <div>
-                                <img src="images/joaquinPhoenix.webp" alt="joaquinPhoenix img">
+                                <img src="images/joaquinPhoenix.jpeg" alt="joaquinPhoenix img">
                             </div>
                             <div>
                                 "In what world could you have ever defeated me? Such a place does not exist."
