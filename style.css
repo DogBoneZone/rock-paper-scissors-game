@@ -8,15 +8,15 @@
     src: url("./fonts/CONSTANTINE/Constantine.ttf");
 }
 
-html {
-    font-family: "Constantine";
-    background: rgba(0, 0, 0, 0.692);
-    color: white;
-}
 body {
-    padding: 0 20%;
-    background: url("./images/column.png") no-repeat fixed;
+    margin: 0;
+}
+#page {
+    font-family: "Constantine";
+    background: rgba(0, 0, 0, 0.692) url("./images/column.png") no-repeat fixed;
     background-position: top;
+    color: white;
+    padding: 0 20%;
 }
 ul {
     text-align: left;
@@ -100,4 +100,11 @@ ul {
     justify-content: center;
     text-align: center;
     padding: 20% 0;
+    background: rgba(0, 0, 0, 0.692) url("./images/column.png") no-repeat fixed;
+    background-position: top;
+    color: white;
+}
+#endGamePage img {
+    height: 250px;
+    border-radius: 30px;
 }
