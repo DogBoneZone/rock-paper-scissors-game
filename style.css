@@ -1,7 +1,7 @@
 @font-face {
     font-family: "Cinzel";
-    src: url('./fonts/Cinzel\ Family/Cinzel-Regular.ttf');
-    src: local('')
+    src: url('./fonts/Cinzel\ Family/Cinzel-Regular.ttf'),
+        url("./fonts/Cinzel\ Family/Cinzel-Regular.otf");
 }
 @font-face {
     font-family: "Constantine";
