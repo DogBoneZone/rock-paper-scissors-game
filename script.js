@@ -7,8 +7,6 @@ const cScoreValue = document.querySelector("#computerScore");
 const roundValue = document.querySelector("#roundCounter");
 const resultValue = document.querySelector("#result");
 const container = document.querySelector("#container");
-let music = new Audio("sounds/The_Colosseum.ogg");
-music.play();
 
 // End Game Page
 const pageContent = document.querySelector("body");
